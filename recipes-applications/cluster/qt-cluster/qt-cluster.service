@@ -1,0 +1,18 @@
+[Unit]
+Description=Qt Cluster Demo Application
+Before=systemd-journald.service systemd-udev-trigger.service systemd-udevd.service sysinit.target
+DefaultDependencies=no
+
+[Service]
+Type=simple
+Environment=LANG=ko_KR.EUC-KR
+Environment=QT_QPA_EGLFS_PHYSICAL_WIDTH=LCD_WIDTH
+Environment=QT_QPA_EGLFS_PHYSICAL_HEIGHT=LCD_HEIGHT
+Environment=QT_QPA_EGLFS_WIDTH=LCD_WIDTH
+Environment=QT_QPA_EGLFS_HEIGHT=LCD_HEIGHT
+Environment=QT_QPA_EGLFS_INTEGRATION=eglfs_pvr
+Environment=QT_QPA_EGLFS_FORCE888=1
+ExecStart=/usr/bin/qtcluster
+
+[Install]
+WantedBy=sysinit.target

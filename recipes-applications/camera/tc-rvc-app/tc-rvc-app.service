@@ -1,0 +1,10 @@
+[Unit]
+Description=Telechips Rear View Camera Application
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/tc-rvc
+ExecStart=/usr/bin/camera_app $EXTRA_ARGS
+
+[Install]
+WantedBy=multi-user.target
